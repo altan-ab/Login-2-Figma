@@ -2,20 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif; /* Montserrat'ı body'e uygula */
 }
+/* Temel stil resetleme (CSS RESET)*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* FONT SMOOTHING */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*
+Font smoothing, fontların ekran üzerinde daha düzgün ve okunabilir görünmesini sağlamak için kullanılan bir tekniktir. Farklı platformlar ve cihazlar, fontları farklı şekillerde işler, bu da bazen kenarların piksellenmesine veya "kırılmasına" neden olabilir. Bu, özellikle düşük çözünürlük veya daha eski ekranlarda belirgin olabilir.
+
+-webkit-font-smoothing: antialiased; (Chrome, Safari, Edge)
+
+-moz-osx-font-smoothing: grayscale; (Firefox)
+Firefox tarayıcısında MacOS üzerinde font smoothing uygulamak için kullanılır. grayscale, fontların siyah-beyaz tonlarında yumuşatılmasını sağlar, böylece kenarlarda daha düzgün bir görünüm elde edilir.
+
+-------- ---- NOT:  ---- ------ 
+Font ile ilişkisi: Bu özellikler fontların daha temiz ve düzgün görünmesini sağlamak için kullanılır. Eğer bir font çok "kırılgan" ya da "kesik" gözüküyorsa, bu CSS kuralları fontların piksellenmesini ve daha net görünmelerini sağlar.
+
+*/
